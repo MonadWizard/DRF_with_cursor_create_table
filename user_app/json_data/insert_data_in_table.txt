@@ -1,0 +1,150 @@
+# add user  [OK]
+
+{
+  "user": 
+  {
+    "fields" : 
+    [ 
+        {
+        "first_name" : "Rakib"
+        }, {
+        "middle_name" : "Hasan"
+        }, {
+        "last_name" : "monad wizard"
+        }, {
+        "phone_number" : "+8801734522557"
+        }, {
+        "mail" : "monad.wizard.r@gmail.com"
+        }, {
+        "photo" : "somedomain/somepath/image.png"
+        }, {
+        "passport_number" : "dsfjhjsdgjgsdjhgjh"
+        }, {
+        "status" : "new status here"
+        }, {
+        "present_address" : "mirpur-2, Dhaka"
+        }, {
+        "permanent_address" : "Naogaon, Rajshahi"
+        }
+    ]
+  }
+}
+
+
+# add post  [OK]
+
+{
+  "user_posts": 
+  {
+    "fields" : 
+    [ 
+        {
+        "user_id" : "3"
+        }, {
+        "post_text" : "what is post, why I use it..!"
+        }, {
+        "post_photo" : "fbsdhb/dsf/dg/d/g/df.png"
+        }
+    ]
+  }
+}
+
+
+#Experience Table:  [OK]
+
+{
+  "user_experiances": 
+  {
+    "fields" : 
+    [ 
+        {
+        "user_id" : "3"
+        }, {
+        "position" : "1st"
+        }, {
+        "discription" : "new discription here"
+        }, {
+        "company_name" : "AGL"
+        }, {
+        "salary" : "12 k"
+        }, {
+        "joined_date" : "5-12-2020"
+        }, {
+        "leave_date" : ""
+        }
+    ]
+  }
+}
+
+
+
+
+Follows Table : [OK]
+
+{
+  "user_follows": 
+  {
+    "fields" : 
+    [ 
+        {
+        "user_id_user" : "1"
+        }, {
+        "user_id_follow" : "2"
+        }
+    ]
+  }
+}
+
+
+Friends Table : [OK]
+
+{
+  "user_friends": 
+  {
+    "fields" : 
+    [ 
+        {
+        "user_id_user" : "1"
+        }, {
+        "user_id_friend" : "2"
+        }
+    ]
+  }
+}
+
+
+Like Table : [OK]
+
+{
+  "user_likes": 
+  {
+    "fields" : 
+    [ 
+        {
+        "user_id" : "1"
+        }, {
+        "post_id" : "2"
+        }
+    ]
+  }
+}
+
+
+Comment Table :[OK]
+
+{
+  "user_comments": 
+  {
+    "fields" : 
+    [ 
+        {
+        "comment" : "what is comment"
+        }, {
+        "post_id" : "2"
+        }, {
+        "user_id" : "1"
+        }
+    ]
+  }
+}
+

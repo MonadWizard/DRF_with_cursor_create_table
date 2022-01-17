@@ -1,0 +1,229 @@
+User Table:
+
+{
+  "user": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "first_name",
+        "type" : "character varying(50)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "middle_name",
+        "type" : "character varying(50)",
+        "operator" : ""
+        }, {
+        "name" : "last_name",
+        "type" : "character varying(50)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "phone_number",
+        "type" : "character varying(20)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "mail",
+        "type" : "character varying(50)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "photo",
+        "type" : "character varying(150)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "passport_number",
+        "type" : "character varying(50)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "status",
+        "type" : "character varying(150)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "present_address",
+        "type" : "character varying(150)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "permanent_address",
+        "type" : "character varying(150)",
+        "operator" : "NOT NULL"
+        },
+         {
+        "name" : "active",
+        "type" : "boolean",
+        "operator" : "NOT NULL DEFAULT true"
+        }
+
+    ]
+  }
+}
+
+
+
+
+Experience Table:
+
+
+{
+  "user_experiances": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "user_id",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }, {
+        "name" : "position",
+        "type" : "character varying(50)",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "discription",
+        "type" : "character varying(150)",
+        "operator" : ""
+        }, {
+        "name" : "company_name",
+        "type" : "character varying(150)",
+        "operator" : ""
+        }, {
+        "name" : "salary",
+        "type" : "character varying(50)",
+        "operator" : ""
+        }, {
+        "name" : "joined_date",
+        "type" : "timestamp with time zone",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "leave_date",
+        "type" : "timestamp with time zone",
+        "operator" : ""
+        }
+    ]
+  }
+}
+
+
+
+Follows
+
+{
+  "user_follows": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "user_id_user",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }, {
+        "name" : "user_id_follow",
+        "type" : "bigint UNIQUE",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }
+    ]
+  }
+}
+
+
+
+
+
+Friends:
+
+{
+  "user_friends": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "user_id_user",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }, {
+        "name" : "user_id_friend",
+        "type" : "bigint UNIQUE",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }
+    ]
+  }
+}
+
+
+
+
+
+POST
+{
+  "user_posts": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "user_id",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }, {
+        "name" : "post_text",
+        "type" : "text",
+        "operator" : "NOT NULL"
+        }, {
+        "name" : "post_photo",
+        "type" : "character varying(150)",
+        "operator" : "NOT NULL"
+        }
+    ]
+  }
+}
+
+LIKE
+
+{
+  "user_likes": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "user_id",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }, {
+        "name" : "post_id",
+        "type" : "bigint UNIQUE",
+        "operator" : "NOT NULL REFERENCES public.user_posts (id)"
+        }
+    ]
+  }
+}
+
+Comment .........
+
+{
+  "user_comments": 
+  {
+    "fields" : 
+    [ 
+        {
+        "name" : "comment",
+        "type" : "character varying(150)",
+        "operator" : "NOT NULL UNIQUE"
+        }, {
+        "name" : "post_id",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user_posts (id)"
+        }, {
+        "name" : "user_id",
+        "type" : "bigint",
+        "operator" : "NOT NULL REFERENCES public.user (id)"
+        }
+    ]
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
